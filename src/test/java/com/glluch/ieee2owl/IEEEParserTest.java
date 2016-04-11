@@ -78,6 +78,7 @@ public class IEEEParserTest {
     @Test
     public void testToString2() {
          IEEEParser.resetTerms();
+         //TODO improve this test
         System.out.println("toString2");
         String expResult = "[]";
         String result = IEEEParser.toString2();

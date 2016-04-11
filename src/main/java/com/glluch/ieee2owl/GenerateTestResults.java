@@ -30,11 +30,15 @@ import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang.SerializationUtils;
 
 /**
- *
+ * A class for do some files for tests.
  * @author Guillem LLuch Moll guillem72@gmail.com
  */
 public class GenerateTestResults {
 
+    /**
+     * Create a file with the desired result for the method testParse.
+     * @throws IOException if the file couldn't be written.
+     */
     public void IEEEParserParseResult() throws IOException {
         ArrayList<String> lines = new ArrayList<>();
         File target;
