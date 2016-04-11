@@ -7,7 +7,7 @@ import java.util.List;
 import org.apache.commons.lang.StringUtils;
 
 /**
- *
+ * Given the IEEE taxonomy, return a list of terms.
  * @author Guillem LLuch Moll guillem72@gmail.com
  */
 public class IEEEParser {
@@ -15,11 +15,20 @@ public class IEEEParser {
     private static final int DOTS_PER_LEVEL=4;
     private static ArrayList<Term> terms = new ArrayList<>();
     
+    /**
+     * Delete terms
+     */
     public static void resetTerms(){
         terms = new ArrayList<>();
     }
     
-    
+    /**
+     * From a list of raw lines, return an ArrayList of Terms.
+     * @param lines raw lines from the text, one line could be, for example:
+     * <em>"........information systems"</em>
+     * @return a list of Terms. Note that if a terms apears in more than one brach, it will 
+     * be returned as one term for each occurence.
+     */
     public static ArrayList<Term> parse(List<String> lines) {
         if (!terms.isEmpty()) {
             return terms;
@@ -51,6 +60,13 @@ public class IEEEParser {
         return level;
     }
     
+    /**
+     * Offers a simple representacion of the terms found.
+     *<strong> This method is only valid if parse was previously called.</strong>
+     * @return an string showing a basic information of each term. It depends on 
+     * the method toString2() in Terms. 
+     * @see com.glluch.ieee2owl.Term
+     */
     public static String toString2(){
         String res="[";
        Iterator it=terms.iterator();
