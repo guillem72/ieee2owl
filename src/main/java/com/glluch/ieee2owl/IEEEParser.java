@@ -7,7 +7,7 @@ import java.util.List;
 import org.apache.commons.lang.StringUtils;
 
 /**
- * Given the IEEE taxonomy, return a list of terms.
+ * Given the IEEE taxonomy in txt, return a list of terms.
  * @author Guillem LLuch Moll guillem72@gmail.com
  */
 public class IEEEParser {
@@ -34,7 +34,7 @@ public class IEEEParser {
             return terms;
         }
         
-                //HashMap <level, term> for each level, the last element seen
+       //HashMap <level, term> for each level, the last element seen
         HashMap<Integer,String> lasts=new  HashMap<>();
         lasts.put(-1, "IEEE");
         for (String line:lines){
@@ -51,6 +51,11 @@ public class IEEEParser {
         return terms;
     }
     
+    /**
+     * Given a line, which represents a term, return their level.
+     * @param line a raw line with their preciding dots.
+     * @return an int represent the level in the hierachy.
+     **/
     private static int level(String line){
       
         

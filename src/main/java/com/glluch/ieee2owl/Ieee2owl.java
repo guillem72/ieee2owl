@@ -12,7 +12,8 @@ import org.apache.commons.io.FileUtils;
  */
 public class Ieee2owl {
     public static void main(String[] args) throws IOException {
-        /*
+       
+        //It is necessary to construct the file IEEE_computers_acronyms_done_manual.txt by hand
         File ieeeFile=new File("resources/IEEE_computers_acronyms_done_manual.txt");
         List<String> lines=FileUtils.readLines(ieeeFile);
         System.out.println("File read");
@@ -23,8 +24,8 @@ public class Ieee2owl {
         to.write2owl(terms);
          System.out.println("Ontology done.");
         //System.out.println(IEEEParser.toString2());
-       */
-        gtest();
+       
+        //gtest();
      
     }
     public static void gtest() throws IOException{
